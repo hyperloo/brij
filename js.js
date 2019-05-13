@@ -3,9 +3,21 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Carousel.init(elems, options);
   });
 
-  // Or with jQuery
 
   $(document).ready(function(){
     $('.carousel').carousel();
   });
       
+
+  $(document).ready(function(){
+
+      $('a.smooth-scroll').on("click", function(e) {
+              var anchor = $(this);
+              $('html, body').stop().animate({
+                  scrollTop: $(anchor.attr('href')).offset().top
+              }, 1000);
+              e.preventDefault();
+      });
+      
+  });
+  
