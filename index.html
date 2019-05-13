@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Collapsible sidebar using Bootstrap 4</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <!-- Font Awesome JS -->
+    <script src="js.js"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <link  rel="stylesheet"  href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    
+    <div id="home">
+        <div class="wrapper">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+                <div id="dismiss">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+    
+                <div class="sidebar-header">
+                    <h3 style="text-transform: uppercase; font-weight:bolder; font-family: 'Orbitron', sans-serif; -webkit-text-fill-color:transparent; padding-left:2px; -webkit-text-stroke-width: 1px;  -webkit-text-stroke-color: whitesmoke; ">BRIJ DENTAL CLINIC</h3>
+                </div>
+    
+                <ul class="list-unstyled components">
+                    <p>Open From:<br> MON to SAT 9.30 AM to 1.30 PM<br> & 4.30 PM to 8.30 PM </p>
+                    <li class="active" class="nav-link" >
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li>
+                        <a href="#special" class="nav-link">Why Choose Us</a>
+                    </li>
+                    <li>
+                        <a href="#services" class="nav-link" data-toggle="collapse" aria-expanded="false">Services</a>
+                        <ul class="collapse list-unstyled" id="services">
+                                <li>
+                                    <a href="#">Teeth Whitening</a>
+                                </li>
+                                <li>
+                                    <a href="#">Teeth Implant</a>
+                                </li>
+                                <li>
+                                    <a href="#">Smile Makeover</a>
+                                </li>
+                            </ul>
+                    </li>
+                    <li>
+                        <a href="#testimonials" class="nav-link">Testimonials</a>
+                    </li>
+                    <li>
+                        <a href="#gallery" class="nav-link">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+    
+                <ul class="list-unstyled CTAs" style="margin-left:5px !important; padding-left:0px; padding-top:5px !important;">
+                        
+                        <div class="row no-gutters">
+                            <div class="col-2 pl-0 mt-0 text-left ">
+                                <a href="#" target="blank" class="pl-2 text-left">
+                                    <i class="fab fa-facebook-square"></i>
+                                </a>
+                            </div>
+                            <div class="col-2 pl-0 mt-0 text-left ">
+                                <a href="#" target="blank" class="pl-2 text-left">
+                                    <i class="fab fa-twitter-square"></i>
+                                </a>
+                            </div>
+                            <div class="col-2 pl-0 mt-0 text-left ">
+                                <a href="#" target="blank" class="pl-2 text-left">
+                                    <i class="fas fa-envelope" style="font-size:25px"></i>
+                                </a>
+                            </div>
+                            <div class="col-2 pl-0 mt-0 text-left ">
+                                <a href="#" target="blank" class="pl-2 text-left">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                            <div class="col-2 pl-0 mt-0 text-left ">
+                                <a href="#" target="blank" class="pl-2 text-left">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <!--    <a>
+                                </a>
+                                <a>
+                                </a>
+                                <a>
+                                </a>-->
+                        </div>
+                </ul>
+            </nav>
+    
+            <!-- Page Content  -->
+    
+                    <nav class="navbar navbar-expand-xl navbar-light  fixed-top bg-dark justify-content-around">
+                        <div class="container-fluid no-gutters">
+        
+                            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                                <i class="fas fa-align-left"></i>
+                               
+                            </button><!--
+                            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fas fa-align-justify"></i>
+                            </button>
+                        -->
+                            <img src="http://www.brijdentalclinic.com/wp-content/uploads/2018/10/brijdental-logo-2x-1.png" style="width: 300px;" data-aos="zoom-out">
+                            <!--<div class="contact d-inline">
+                                <div class="my-auto d-inline-block price" style="color:whitesmoke;">
+                                    <span  class="ic">
+                                        <i class="fas fa-search-plus" style="font-size:25px;"></i>
+                                           <span class="d-none d-sm-inline-block">Get It Done</span>
+                                    </span>
+                                </div>
+                                &nbsp&nbsp&nbsp
+
+                                <span style="align-content: left;"></span>
+                            <span style="text-align: right;"><i class="fas fa-envelope"></i>hdjfLdkf,sl;kdfnmk</span>
+
+
+                                <div class="my-auto phone d-none d-sm-inline-block" style="color:whitesmoke">
+                                    <span  class="ic">
+                                        <i class="fas fa-phone" style="transform: rotateY(180deg); color:white; font-size:25px; "></i>
+                                    </span>
+                                </div>
+                            </div>-->
+                            <div></div>
+                        </div>
+                    </nav>
+                    <div class="container-fluid">
+                        <!--    
+                            <div class="navic " style="text-align: center;">
+                                
+                                        <i class="fas fa-phone" style="transform: rotateY(180deg)"></i> 9898212228                                    
+                                        &nbsp&nbsp&nbsp&nbsp
+                                        <i class="fas fa-envelope"></i>&nbspdrbrijeshpatel@yahoo.co.in 
+                                </div>
+                            </div>
+                        -->
+                        
+                    </div>
+                    <div class="container"></div>
+                
+        </div>
+        <div class="landing">
+			<div class="home-wrap">
+				<div class="home-inner">
+					
+				</div>
+			</div>
+        </div>
+            <div class="caption no-gutters text-left"  >
+    			<div class="container" style="padding-left:30px;"  data-aos="flip-right" >
+    			    <h1 ><span style="font-size:50px; font-weight:300px;" id="change">CHANGING</span><br><span style="font-size:30px; font-weight:normal;" id="live">LIVES WITH a</span><br><span id="smile" style="font-size:90px; font-weight:bold;">SMILE</span></h1><br>
+                    <span id="phone"> <i class="fas fa-phone" style="transform: rotateY(180deg); color:white; font-size:30px;" title="931547826"></i>&nbsp&nbsp
+                        <i class="fas fa-envelope" title="drbrijeshpatel@yahoo.co.in" style="color:white; font-size:30px;"></i></span><br><br>
+                        Timing: MON to SAT: 9.30 AM to 1.30 PM & 4.30 PM to 8.30 PM
+                        <br><br>
+                    <a class="btn btn-outline-light btn-lg" id="exp" href="#about" style="z-index:-1; border-radius:0;">Explore</a>
+                    
+    			</div></div>
+            
+        <div class="container">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+    </div> 
+
+    <div id="about">
+        <div class="jumbotron">
+            <div class="container">
+                <br><br>
+                <div class="row no-gutters ">
+                    <div class="col-12 text-center" data-aos="zoom-out">
+                        <h1 id="wel">
+                                Welcome to <br><b style="-webkit-text-fill-color:whitesmoke; padding-left:2px; font-weight:normal; -webkit-text-stroke-width: calc(100vh/160);  -webkit-text-stroke-color: #242627; letter-spacing: 4px">Brij Dental Clinic & Implant Centre</b> !
+                        </h1>
+                    </div>
+                    <div class="col-12 col-xl-6" style="margin-top:22%; padding:20px; font-size:20px;" data-aos="zoom-in-down"><b style="font-size:35px; z-index:1;">Who we are?</b><br><br>
+                            <b>Dr. Brijesh Patel’s Brij Dental Clinic</b> In <b>Ahmedabad</b>, is one of the best dentist doctors in naranpura, ahmedabad, Gujarat India. He is well experienced and trained <b>Cosmetic and Implant Dental surgeon</b> offering  affordable dental treatment with international quality standards.
+                            <br><a class="btn btn-outline-light btn-lg" id="pro" href="#about" style="z-index:-1; margin-top:20px;  border-radius:0;">View Profile</a>
+                        </div>
+                    <div class="col-12 col-xl-6 int no-gutters" style="padding:30px; padding-left:0px; margin-top:50px; z-index:0;">
+                        <div class="single">
+                            <div id="front">
+                                <img src="http://www.brijdentalclinic.com/wp-content/uploads/2018/10/Brij-Dental-Clinic-LOGO-744x521.jpg" >
+                            </div>
+                            <div id="back">
+                                <img src="images/img3.jpg" title="img3">
+                            </div>
+                            <div id="right">
+                                <img src="images/img3.png" title="img3png">
+                            </div>
+                            <div id="left">
+                                <img src="images/img16.jpg" title="img16">
+                            </div>
+                            <div id="top">
+                                <img src="images/img17.jpg" title="img17">
+                            </div>
+                            <div id="bottom">
+                                <img src="images/img18.jpg" title="img18">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        
+        </div>
+    </div>
+
+    <div id="special">
+
+            <div class="container-fluid no-gutters">
+                    <br><br><br>
+                <div class="row no-gutters">
+                        
+                        <div class="col-1"></div>
+                        <div class="col-10 text-center" style="margin-bottom: 80px" data-aos="zoom-out">
+                            <h1 id="wel">
+                                    Why <b style="-webkit-text-fill-color:whitesmoke; padding-left:2px; font-weight:normal; -webkit-text-stroke-width: calc(100vh/160);  -webkit-text-stroke-color: #242627; letter-spacing: 4px">Choose Us</b> 
+                            </h1>
+                        </div>
+                        <div class="col-1"></div>
+                        <div class="col-12 col-lg-6 col-xl-4 sp mx-0" data-aos="zoom-in" >
+                                <img style="object-fit:cover;" src="http://www.andreypictures.com/files/2010/05/BusinessIndustry04.jpg" >
+                            <div class="over">
+                              <div class="text">	
+                                    <h2>Our Specialist Team</h2>
+                                    Dr Brijesh Patel’s Brij Dental Clinic, Ahmedabad, India, has 11 years of practice. At our clinic we have specialists from all fields of dentistry who cater to individual needs of every patient. At any of our Specialty clinics we feature ideal, yet realistic treatment protocols and “state of art” treatment results.</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 col-xl-4 sp mx-0" data-aos="zoom-in" >
+                                <img style="object-fit:cover;" src="https://www.dchweb.org/sites/doctors-community-hospital/files/awards_iStock-1055161930_0.jpg" title="img3">
+                            <div class="over">
+                              <div class="text"><h2>Our Work</h2>
+                                    At BRIJ DENTAL CLINIC our passion is providing our patients with genuine care and excellent dentistry every single day. Our specially trained staff can serve you in all your oral health needs.</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 col-xl-4 sp mx-0" data-aos="zoom-in">
+                                <img style="object-fit:cover;" src="https://www.ishahospital.com/wp-content/uploads/2015/03/surgical-ICU-1024x681.jpg" title="img3">
+                            <div class="over">
+                                <div class="text"><h2>Infrastructure & technology</h2>
+                                        Using the most advanced dental technology possible is just as important as staying up-to-date on the latest treatment techniques. Because our practice is dedicated to providing you with the safest and most convenient treatment options available.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 col-xl-4 sp mx-0" data-aos="zoom-in" >
+                                <img style="object-fit:cover;" src="https://wrm5sysfkg-flywheel.netdna-ssl.com/wp-content/uploads/2019/03/ECRI-Names-Top-10-Patient-Safety-Concerns-for-2019.png" title="img3">
+                            <div class="over">
+                              <div class="text"><h2>Safety & Quality Assurance</h2>
+                                    We at Brij Dental Clinic Ahmedabad India, follow Strict sterilization and infection control protocol given by WHO, IDA and ADA.
+                                    We Follow Following International Health Care Guidelines:<br>
+                                    1. WHO guidelines on hand hygiene in health care<br>
+                                    2. Guidelines for environmental infection control in health care facilities<br>
+                                    3. CDC Guideline for infection control</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 col-xl-4 sp mx-0" data-aos="zoom-in" >
+                                <img style="object-fit:cover;" src="https://cdn.expresshealthcare.in/wp-content/uploads/2019/02/05154817/Strategy-750x400.jpg" title="img3">
+                            <div class="over">
+                              <div class="text">	
+                                    <h2>International Patient Guide</h2>
+                                    We have a vast pool of highly qualified and experienced specialist doctors who have the skills and expertise to deal with all dental problems. Based on the information/documents provided by you, our Director & Chief Implantologist Dr. Brijesh S. Patel M.D.S. (Guj Uni First) & Team of specialist will decide the treatment plan which is best for you.</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 col-xl-4 sp mx-0" data-aos="zoom-in" >
+                                <img style="object-fit:cover;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpobX22aganCxzl4Rn5VYPci23OOc9_UPgPTpvxVjzdyFPhmLCRw" title="img3">
+                            <div class="over">
+                              <div class="text"><h2>Our Offers</h2>
+                                    We are offering Annual Dental Plan – Brij Dental Plus 699 RS. If you are looking for a qualified dentist or dental plans at real affordable costs, you are at the right place. We have an exhaustive dental offers for your all Dental Treatment needs</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 text-center call my-0" style="font-size:28px;">
+                            Have any queries? Call Us Now! <span id="callit"><i class="fas fa-phone" style="transform: rotateY(180deg); color:black; font-size:30px;" title="931547826"></i></span> 656323232121
+                        </div>
+                        
+                        <!--<div class="col-12 col-xl-6" style="margin-top:22%; padding:20px; font-size:20px;"><b style="font-size:35px; z-index:1;">Who we are?</b><br><br>
+                                <b>Dr. Brijesh Patel’s Brij Dental Clinic</b> In <b>Ahmedabad</b>, is one of the best dentist doctors in naranpura, ahmedabad, Gujarat India. He is well experienced and trained <b>Cosmetic and Implant Dental surgeon</b> offering  affordable dental treatment with international quality standards.
+                                <br><a class="btn btn-outline-light btn-lg" id="pro" href="#about" style="z-index:-1; margin-top:20px;  border-radius:0;">View Profile</a>
+                            </div>-->
+                        
+                </div>
+            </div>
+    </div>
+    
+    <div id="services">
+        <div class="container-fluid">
+        <div class="row no-gutters ">
+            <div class="col-12 text-center my-5" data-aos="zoom-out">
+                <h1 id="wel">
+                        <br><b style="-webkit-text-fill-color:whitesmoke; padding-left:2px; font-weight:normal; -webkit-text-stroke-width: calc(100vh/160);  -webkit-text-stroke-color: #242627; letter-spacing: 4px">Our Services</b>
+                </h1>
+            </div>
+            <div class="col-12 text-center my-5" style="font-size:25px; color:rgb(98, 92, 92)">
+                    From family dentistry to specialty care like Cosmetic Dentistry and Dental Implants, we offer a complete line of dental services to our patients.
+            </div>
+            <div class="col-12 my-5">
+                <div class="row no-gutters">
+                    <div class="col-12 col-lg-6">
+                            <div class="card" style="width: 18rem;" data-aos="zoom-in">
+                                    <div class="card-body">
+                                            <h5 class="card-title">Invisible Braces</h5>
+                                    </div>
+                                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSExMWFhUXGBoYGBgYFhYYFxoXFRgYFxgaGBcYHiggGBolGxcXITEhJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGxAQGzUlICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAMkA+wMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAADBAIFBgEAB//EAD4QAAEDAgMFBwMDAgUCBwAAAAEAAhEDIQQxQQUSUWFxBiKBkaHB8BOx4TLR8RRCFVJicoIjogckMzRjkrL/xAAaAQADAQEBAQAAAAAAAAAAAAABAgMABAUG/8QALxEAAgICAgIBAgQFBQEAAAAAAAECEQMhEjEEQVETIgUyYYFxkaHB4SNCUrHxFP/aAAwDAQACEQMRAD8A2DXJ/Ci11V0jYKywdWbLzkexPoPUCXdTRMTXDQqutiidUVGzQi2MupoRaNSknVih75PSOibgWWJli1jeIRWbg1CphUuBMX9/wpNqyHGb5D158VuCKfQL0VGhTOJaNR5qnq12hxuDblnA59UYOgtaNQNeso8ETeIsv6tuQIJ4IzsTFz9xzVeahA5zwmxnkmaNUZS115IAJA0yBsbplBEpRQduKETBPQGUVmIaeXVDJBFxIMEyQTbUWug74O8RlkAA0/xqj9NCUmOB40KkBzHmkHtBc1rReZ8BfieChUJaZk5SRDjl4ZXQcAcL6Y/PD5Ga48KpO0HATOki/wDq/Ze/xUzBjIusTwU3Ep9GXosDN/GEJxsk27VbnJy8PRTGKacrnx4JGg8JLtBzz8vmSG63z5dDfVBHv4If1RlnfSfdK0ZE6nA+KFvZ/PuvGqQbzEoe8MwdNbZpRjjzc62tz1QQ6I52568M0V8HP83SznZ3vw5/PlljEosfL0+eSiR85oRqG/WOl8+n7rzTLTx9xY/OSYU85unh4pV1KRl78UV1iefz9kVoBnn89oRMINEGfNMBh+ALpp2+yICRaQs2YfoGFZ4J1/X8KuiDJTeDqQR1E9Ey7NPoBjnGTKQfVCa24YIPh4j5PiqSrVXRLTo6MEeUEx8u5H0UfqG9vP8ACTdiDEof9WZifRCzojAda6/qvb1jafD9il/riMygf1sGyA6Q/UJsSCB85yoOxfEO8/xz4pR+MBSr8SFg8V7LV2P0InSS58/eERm1ADm8jm/26rNnFHnbmuOxB5rUxWoGm/xBkfpbPifEyYXTtcndBMgaQG/gLMCsSVIErUxax+zT09oNzANgblxdnzn2Uae0ACTc5AZn7ggrNmq6NVAYhw4rbNxgaKttFzgBcDn5wh16+ZJzEZZRHPks9Uxbo1QhjCcyfn2RpmSiujRGuLXH8FQGMtGefHVUFTaDjFrAcF47RO6QPstwNovP690zJ1UxtdwsVmhtAob8W4ocBZcWa47YymLcDOfLLReO1WnOR6egWOY9+krpdVGYMIPEiDUDYf1zdHAjz/7bLgxdxlA4T/CxZxbkSnjanP56rPAI6+TX/wBVwm4Oo14LzcQLHh+4HusqNqOH6h43+FP4faIsd7OTfQ/yleNoRmha/eEj+RZHpN9NfJVGBxYccxEZaTlZWlF14JzE/wA+Kk1QAgFzzP2lFFIm/t+VEA26fz90xSqQIn7IBGazFBpgJmo3VBdTTtAi7QHHN3xNpIAIOsZdCqavR3eUaZnzCvDTc6wBPQKvx2BqRdo5Sntvsrjmo6K58xvQY9OFlPF7OLADeDqB91q6Oy2ncEWMesFP7S2YHMMDK6dQZL/7akkjCPpQwu3XHiZtPiq8tJyHmvo+x9ngU7jOVLFbKY626L8k3F1Yy/EEm4tHy2rUAMXPQJ7Z+zDVMCRxNlcbQ2FuPWl2DsoMpi1zdKk2y2fy4xhcTN0eyzdZRq/ZaG5EcMluGU4Fo8l51Gc/ngn+l+p5j8ydnyLGbNe0wbEKWB2e9z2t48tF9C2rs2e8MwvbD2YB34vkEig7o7X5q+ndFO3syCJ3bDWfyl6vZ+nw9T+63FSl5JWrhQnljOCPlS+T5ZtbZbqbrZaWCcwOww5m8RcrY7R2cHCCpYbBwIU4xldHVLy/sVdmRd2a5+gUW9mW3kk+AW3OFQH0E7g/kkvKkfPdp7GDGksBkfZC2Vs2e8RI0WxxmGF0LD4UAWCmuXRf664lY3CclDEYORkr0YdDxGHsg4NbJLNswZwJ3o4Jyng40Vw7DjeK6aKquUkNPIjOYzDKupYe/C61GLpC8rOHalEEy8eBn7J4J9E5zSVjmya5Y4NORtNhEx88lqKDbA/JmfnisJ/iVNwlocRx3SB5ugLdbId9WkyqQW7wHAxHTzUs8K2PiyKWh+hfkfsUYkc/ngo0W/PsiGPkrmLluMOSSBcA56JzD7NH91/si4e1kx9QnILpXHtnJJyWkcFENEAKt2lTsrQN4qv2hEJcj0Ni/MHwF2sPT0sram2x6Ki2RW7kf5T+VdMdZdON3FHHnjxm1+pCmwCy65i8wohTkyv2nhA8c01QpQ0DgIU3BeYUKV2FybVEg1cLVIFcLkRQNVg1U8NTDRAUahUqblkjN6JOCDUCm56DUeszIUrMlCwjw5oIII4i/JExWIDRJ6DmTkAs+yk3AU2te6GucTu7xcQXXJJyF9BZBIp6o0kJXECEDC4+m79NTO47xPoUHGbSY39TukakfZBhSdimOdAJS2CxAPdNj9/yqTb20d4tc57qdOn3txv66jsgC4S1rR4k8lU1dqve4NBDcj3dJExKWMHdltcaN+0BBxRELMN2k9gB3ibWOZnna6T2nX/qWw99RoycxhaASNcpg8CmcW9CpU7ZXbQ2nUrVyMO7dYz+8RkNZNg2ZzzTlLbFTIvoOPPfZ/3RA8lSbTrBoFKm0NYNBck8XHVAY3uhOopIN2ye2K2KquLXNAaLdyp3PEg3VZTwVJpG8N93+UHuD/cTd3hCNXaZhdweEc507pPNOtIlNXKuyNWkXWuTkABbhAX1bZWBNOjSpkd5rGh0cQBP3VJ2b2KJbVIAIBtnBuL8TC1TQCTlx9Bfnl6Lj8jJf2nd4+HiuTBtpZ2U7DMH+V0sNr2+BEgahchezQArhqJQ10F+IVXImsTY6+pNlVY6o4mAJRGV+8usMuePEeP5BTRgpx2LK8crXwZ921X0CSIIOc8lf7K7WYd9MOfUax0d5pmxHsVndp7IfVdvMc0NdnJMgjO0cimsJgWU+41gLSIMtBnmTFz+yrijx0L5DhkV1s1Wx9rU8Q1z6cwHFt+UEGOBlWG+sJhaD6L/AKmELb2qUXk7pj+5hGTlaM2/VkA0gDr+sNH/ACcBPgrNnF9Nvo0++oCoMllMV2ieQdwCOIkTHPhmlX7cxLG7xZTIOrWkx1g5pkmxWuPZt2vXt5YRva98foaXDMXafOfZQb27qRP0xAzzy5aJuEiblH5N1XqgBdoEQS4wBpMeq+Z0e1FavUaSHFjTJa0XMZSdRrFk3jMfiHksYDujOJiTn3rLca7GS5VRcbS7WNp1CxrCYMXdY9FW7Q7am30t0XyLHF3mXBo9VQYrZlR14vzIKCMEG/rO8dN33JCVpHVCERx/aWq6o2o42aZaDlwkx7JrbOKrY0MaABEknJgETJJyEKsa5ggNpjenMyT62lSqYpxuT/8AYEtty1WukN9O3aObPwpY67pGhytxCNiqjGHegkzxgga9eiVwT3F8kl5t5ExlkB0VrtDBd3eA8wt6A1UqYjVxrBTBG69zyW7k3A4kenVU9TE7xIyGWUZdLq4weFazETA3QdRnIt7L1bZYJLgQxp1cR5rWg1QphDvUxyJUHYeTIMW9EzgKEBzQQekj7pjEN3GtJAkyQCJEc/ELN7MqaozrtkPcScyTkJP2y808NiOgAgjqrCnjKlt0gdBAHDIoO19otpt77y5xyAz8eA5ocmzKMU7RR42qGOMCSDAn7p3Y7K2IcIG6wEAn8ZkqnwOFqYutuiwzPBrco5lfVdi7MZQY1oFmjlN9TxJ4pcklFV7KYsUpPk3r/sLRwzabQ1oA9B6ZKTLemt8ohM1DNtPmqHufM5Pw8VwSds629EHVDM+akJOg9Fxrb2mQu/SHTySiaJvrJariFXVsYlH4mVns74YfktKOKh46q1aYqTxb7rIuqOmQJi/ktW39LZ1AI8YMK+JNI5fLjFNURr4TvyLCZPAGImOYnyXWU++4nK3mj1ahbLhruz0R61C7vP0XQ2ecuqYg/CA3FjyylAq0S5wDju8RnLeStH1hTAEXdr88FWbSqFr2OiYMHkD89Uwi/QjjMBTDCGndHCJiTPjmqZ+zq5aG0quZvpa8yPLyVptIl+KFLR27HiULtRihTaaVKwbBeQc9A08eMKkb9EptVTKcdmy9x/628QL7osAOZI80B2xWReo4tBsBABicz4nTVMUqlX6bQ2C17d4xnOV+IF1Yv7N1w9u65jg5zQYOWfeNrDP0T7rbJNQukhfZNBrG9ydxt4nUZ3OeaFi8a51t4wcmg/LrTV9gtokMYSGukd4yQ4tJJnXJcwmzKWFaTUAc9xMcd1B0ykZUZKnRfBIa6ONwhUHGHsnPUgTaTHILbV9qNqgNA4QACCVQDs3U3i57gyZgRM3yA0SNFozT/NoohQIMyYgW0HA9c/NDa6ZE+C09ZtGmIduO32wAX7hJaY3m24hIDB03GzajeEQR6lI2XhJVsTpYY0tx4tebjx1Wtxb6VWk18bpLZMC0j7FVBrDcLKpLgMi6GgeqptobbYxu6w70ZNaBuTxLtUeQjxvIxzHYymw7sD9IL94WDjpv5zEJRrqZvuvI5VJb6hZWrXc4ySSUEO1Qas6Vh4rs+h4bEMa0ncDQBm4iLceXisj2g2kKroYZaDc5bxtpwEWVPWqE5knqSfug/URURaUWHnhY8rL2C2e+s/dYOrtAOfHorLY2w31yCe63nmf2HNfRtkbJZRG6BABH8nx4oSnWkVWP3L/0T7MbEbQYLXzJyJPEq9Jvz0Q6jwTE5ar09OELknIaTOHw/ldcfLll65qM878F55+ZeakKDC7PM+q7pwCjKADLAOeYAJJ0F1r9hdjS4B9cloOTAe9/yOi1Wy9j0aAApsExBdHePUqG08bf6bTf+48OS7VjjBWyOXz8mZ8MekIYyhRaPo0mNAH6iAPKcylH4bMj/LEeEBMsaiQpOTbsCSiqKct32kZWBB/2mSPRO4Cvvg35mbIlSmAZj+VU4lhmxzsQAMif2TqWwOFodxTg8lzT3RABHzoq/abrSLwOuV/smxQcJaB3YsOI0k8fFKUaMEgiBKfdirjR0M+piKJAsLzysfZUO3WfUdUsSTUJEcBYLRtc1stkDd/SQZc4HPu+MJWm94N6YjWDB8rKibItK9mTbhKjS0jfaA0C29lrFoV52fp1qdRtQNMT3t60g553VoX1c4YBwL7+kgIGIxkNAdiKTTq1ned53I8Am5MVxiy6x2Ia5xeCJZcC+RF7BVlbbLHuD3UnlwEAlhLB0kLJ7f2h/wBNzaO8Ju55PfdF4sbCY10WRZj3Ew9ziDxcT7ob9DxhG6Z9Qq9p20znHgwAdIuqPafa3endBeechk/6r7zhysCsu2mDkuualdnbHBjWyeJxb6ri97i53PIDg0ZNHJCa10QCY6mF1hC6X6JTo1RHcXqrdV4uKGQSjQHMWqOASz3p44NxMR68U/g+zr3m8AcrlHkl2TUJzf2oz9Ki55gAknT5kFrNhdlCYe8bxzjNo/dabZnZ9lIXAHQAzzJ1VpQd9NxbPdgOtz0HKfdJLI3+hSOOMd9v+h7DbODWtIMcvDOfmSk/Fg90XHt5ZylMVjZMCDlpMO168J5ruHp6k39VCUvgZppXMZptvJ9/BdaZ0jpmuE6Lmn4t9lEk3ZNx8SuAfPyuRxK6CdPssKdJv4KLm8vddEeKmxth7Hj1Ss10a/auPFJv+p1mj36BUtHjmTclVVLFvxFQ1X6/pb/lboOvFW9MLrnPkyMMH0o0+/YVqIAhtRJ+eSyAwWINvnzRUmLKtcW/55qnxhU5svgRUYvGOAs4jxKzGO2i4ky8x1KstsYndBPBZIF1QwPEo4o3tnoOKS0tmu7H02PZUeRMu3eFgOOiuMVsgSGtgNIBgi19PyqrsXSDA6mdTK2gZG7rAhdGmeRmco5HZkcT2T/uLGiTaMzw1XKewXsAG64mf9NvW63O7IXm6QmIfUZiH9nalRhcJgcvBZqt2OeS6HkX/wAh/dfXnzCiLhZWumDnfaPlGB7M1223i4D/AOM/ebeKcp9nKzo7rrzbdg2MdF9Ra+MhHohCu4OnX90exlnklSRhML2JquMbhF7lzw30F047sC65P04A0qPknrpZax7zO8T7KtxO1KbZAJd/ty8UG4rtjwefI6ijHbQ7JuaRu2E3vIjiCck1gcMylIYN50ET/bzP+o+it3tfXNzDeF/nmrHA7MZTG9ULSPliOOXmpNt9HoRxxxx/1dv4RR0MA57pPrkrKgynScQ7PQyc+BjKZzXtrbTa0uayI4gQcvQKgr4skXJU3o6oxnkjvS+CyxuODoBOXpNrfdLurkznfz3Rr1z8kkxsqwo0fg+X0Stmk4wWguEoTJ9T8hP3A58/2yUabIgTPr6G6lP8cPdTbOOUnJ2yRcRr1/hR3jPzP3XDxv52UgdTPt88UtC2SBy/C60c/mdlGfBFH4WFZDO0eaM0Dn88ENnj4qYHyVgMZ2fR3QE81QpMhGDVZAnK2SYh1XKRKUrVEzdCRVsDiKiptoV7J6u9Zza+JiVN7O3DDZmu0FQvIptzcfRWOy9nim0W6qv2KwVaz6h/t7o+5Wrp0BFvuq/lVHfGuwNAgG2auae07CQZVNVo6qdIujJBSIZ/Fjk2jXYfEBwBBXWVQDErLU8S4aIgxzpmCmUzif4fM1jiCl2VADErNnHP0so/WqH+4rfUMvw6XtmqfiWjNwCqMZtZs9zvH0VWaRNyZTOHwtwfxMdVubZSHhYobk7AvFSqZcSeWitdn7HmS6wGf30QG4prDfdym5MZ+qVx236mTHFo1y1QVey8llkuONUi1xuNp0hDXQeVtTciDH8rP7R2kS67t4cJkT4qtxOMnqEo6oSg3ZbF48Ybe2Eq15KnSZvaKNCjOataOHgDhyPmISt0DLmrSO4enaB0Jgn5yVhRpDS835hRoU4yMGYGV+PWEw1vHPP8KTlZ58pWz26P4t0XJyzOt/3XXOufnDiovdznLry6pQI84gWkk8NV0Shhxz56AIu7Mfn7yiYlTbeYv88kV5+dPsoz+6lTHH5xWFJR89lMA/AuBuX316KYA+FYFls1qkpAIb3Lo6I3YJ7kniXItaoq/EVEjZ0QiJ42rZY3bmIzWi2nWWT2neStjVyOq+MbI9mSWlxOt/K0rZYZ43Qq3a2xHYRtAwYdTaT1Ilw9VynU3d0zLSJB4jhyKvki7sXw88ckeJZOK6wSkBiVIYnmpUeg46H6jIE/LrzWhJ1MZaOYXmYpYXjKixZRm/3910QDeEicVaSb6JU4jNECg32W1TEt3THyNEnW2hmBl1Vc/Ek5pWtiboDrHFdjtfGa+fiq6tjM0rVxEmEMNm8+PTmmUTSnGKsMKjnclY4TCk6H3hdweGFjfKx05XVzQoGYtoBxBBBsfGehhTlKtHJk8i+iGHw4GcCLZa+OZT9KjxFxqIieB5fhTpiAbZEdYMC/HNedUAGdoPU5fhSbORts8+4E6z18V4GABn99P2KCH524deAHWPdee6B7Tc9YuUpqJTHGJ+w9VECTr80vqhUzJyHznF8kZrPnzJZBZMNmB9uHVGaJQ20SPawRxw8ZTCnd1GaENjUcNWFZBufup2+EKQb8+dV6eR8lhS4S9YwpGola9RXYkY7F6zlX4pyaqvVZjaqm2dcEVG0HyqunQ3qlNnF7R5uAVliW53Q9i7v9VQ353fqMy6iPCYVcS2DPL7GfSe22zPqYYwL0xI6AX9F8z2bW3Hbr27zD/bMXykHQr7bWYHAg5EEHxXxvb2ANKs9n+U26aLqkjx8E2tEcdsl7e/TP1GZzEGNQW5yFWmtxV7svEmA2SCMiM/FB2hht43GeqhKj2MHmS6lsq/qrprIdTCEGR+UJ1F50SHfHPF+wtTGpWrjlx2DedFEbNJz+6K4oDzpA34wlQkusnmbPAF9E5QoNEwPH5og5pEZeQJ4fAkxORsOsI+Hwji0sd0mBflCbr4QOiHOaLSGmBPA8RKJgazBvNDnODbkk89D4rt8TcHJfc1Tqumnrf9vZ89+J55ucYyfGLtN32mt/b+n/AC/29kTh6kNpU+6IG++MojytHitBRgSADYc7+PQqkx1Vji2mXObMEEGxnKfElPYDDfTloc52Rl5kDIjdHmk82KUIt6b3Vd327/t66B+HTlKc0nyinV30l0uP9/8Ad2H+sBv97gYjTPzKEa4ORPESDfiVCoD37ZgR4A/uuuB3mmLAnhrlA+ZJfp4Gk5PdfKXUE/j29f5Ms3lJtRWuXw3d5JRu79RqXx/BBA+ADaDYanLlyQmuGZuchAuc+HBdpYeHXy08cyeC79LujumQTcRIk215orF4/wCVO1a+Pak138avfdr4Fl5Hl1zcadP1L04J9fP3cbXST6s9iMYymBIMu/S0NJcdTYcAlsZtUOpVjTcQ5gGYIIJysRnYqdShVZUp1gzfhpY4AjeEmQW71ibQgvwVZ4xRNLdNVrAwS0k7ts5sckceHDFptrTW7VfmSqu6rd/uPPyM8o0k1aeuLtfY3d9J3qv2LClWaKpmqYbSDi0gboE/q3uNlKnt2iS39Y3yAwmm4Bxcc2mIQcTsio99UCwdhwwOm2+CTB1hAx9eq5uHY+gacVqQJJaRIOTA03troEIYcc63fXtKtf12GfkZcd6rv03e/wCOtf46LSvtylTc5p3yWHvxTcQ0ETJIsArJlcHd3bhwkEZX/EeqrW4N/wD5zu/+pO5l3h9IN+9rpzZNJzKFJrhDm02tI1BAAKhkjijG4969/Kv+jLY55ZSqXW/Xw6r90NRb581XP+RHzqpkiL+vND+pyXMdY6X2SdZyerMBzPsq7EUwMlVpjQoUxDkhWZqnnJeq0KZa6KjEiyDsijOJoAa1Wf8A6CPizcqXZWgamMogf2vDj0Zcn0V8XZLO6gz7CsT282aN5tYa913stsktsYMVaTmcRbqMl1niRdOz5GwQZ1VnTG+24uEHEUSDHmnMLTUMh3Yypq0ChbpV5iMOkH0Fzs64sr3sN1F1PVPGlmo/SS2PYmKSLTYmBSRG5rWCwYZm3w5jx+ZBRfs4Ck5lMRYxOpzHjZOBuvz+FNtOTGn73TQyyhXF+0/3RPJihkTUl6a/Z9igwDXU203gHdAFrEOjiMhKbMx5D590QUzbiPmaKKRvn8slnklP8z/X+Y2PFCH5V6S/l0BIFgchbx5n0Xmib2+ck0KP4RWUFMexVlPrfzhHDM0wKCKKa1GsCylMI7WRf5dTFPQIrWX8I+fNURGyApCIPC+mds0lhdh0WPDw1xc2zd5737und3jZWRdouTOqeM5RTUXVkpQjJpyV10Qi+X3XvnipNdrl80XHcUo5BzZ+eKj8zXXZR4Ic8ysEexD0hWKdrZBJ1MlRjQE6hSGKqkBO1FXYtKVKzEVZWu/8NcF3qlYiwAaDzNz7eaxeL/Uvpf8A4d/+1/5u+wXThXs5PNlUKNOvFeXV0HlGD7S4DcqkxY3HulsPTV92v/s8fZU+FyUMx2eO9Hn0uCXdh1Yn2QyuVnYitqYb5ogHCK0KhV16oDlZ9Arow5Kcr5Hr7qYzHX9lgWLtw1o5o7aFkb9kSl7H2QYQYo/PZEZh0ZiOz9J+aoAbFvpIow6K7MeCm39kXpgsXLFINFkV2Z+cFA69PdB6BdkGtt88uSmQpn55uXTn4eyILBOb8souHDRTbn4e683I9FjWCceXtmhvzJ+aeylWyKgdenusE4TrouB3Rcbr0Hsp08kAs//Z" class="card-img-top" alt="...">
+                                    <div class="card-body d-lg-none">
+                                            <h5 class="card-title">Invisible Braces</h5>
+                                      <p class="card-text">Dr Brijesh Patel is CLEAR ALIGNER certified specialist in ahmedabad, India providing irregular teeth, gap teeth or proclined teeth treatment by Clear Aligners (Clear Braces Or Invisible Braces)</p>
+                                      <a href="#" style="color:rgb(254,39,18); font-size:18px;">Read More >></a>
+                                    </div>
+                                  </div>
+                    
+                    <div class="card" style="width: 18rem;" data-aos="zoom-in">
+                            <div class="card-body">
+                                    <h5 class="card-title">Laser Dentistry</h5>
+                            </div>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlAvesh_Zi7479aqf3ybIXCiRkI3ahI_ep0iGkb6ggMcwZqQ3YDQ" class="card-img-top" alt="...">
+                            <div class="card-body d-lg-none">
+                                    <h5 class="card-title">Laser Dentistry</h5>
+                              <p class="card-text">Dr Brijesh Patel is certified Laser Dental surgeon in ahmedabad, India providing Laser Gum Treatment (LANAP), Laser Teeth Whitening, Laser Fibrosis Treatment.</p>
+                              <a href="#" style="color:rgb(254,39,18); font-size:18px;">Read More >></a>
+                            </div>
+                          </div>
+                    <div class="card" style="width: 18rem;" data-aos="zoom-in">
+                            <div class="card-body">
+                                    <h5 class="card-title">Dental Implant</h5>
+                            </div>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlAvesh_Zi7479aqf3ybIXCiRkI3ahI_ep0iGkb6ggMcwZqQ3YDQ" class="card-img-top" alt="...">
+                            <div class="card-body d-lg-none">
+                              <h5 class="card-title">Dental Implant</h5>
+                              <p class="card-text">Dental Implants caused a revolutionary change in dentistry. Dental Implants are man-made replacements for tooth roots that have been lost.</p>
+                              <a href="#" style="color:rgb(254,39,18); font-size:18px;">Read More >></a>
+                              <br><br>
+                            </div>
+                          </div>
+                    <div class="card" style="width: 18rem;" data-aos="zoom-in">
+                            <div class="card-body">
+                                    <h5 class="card-title">Cosmetic Dentistry</h5>
+                            </div>
+                            <img src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
+                            <div class="card-body d-lg-none">
+                                    <h5 class="card-title">Cosmetic Dentistry</h5>
+                              <p class="card-text">Dr. Brijesh S Patel is a well known and leading Dental Implant and Cosmetic dental surgeon in Ahmedabad, Gujarat India. He is doing Advance Cosmetic And Esthetic Dental Treatment.</p>
+                              <a href="#" style="color:rgb(254,39,18); font-size:18px;">Read More >></a>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="card" style="width: 18rem;" data-aos="zoom-in">
+                                <div class="card-body">
+                                        <h5 class="card-title">Smile Makeover</h5>
+                                </div>
+                            <img src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
+                            <div class="card-body d-lg-none">
+                                    <h5 class="card-title">Smile Makeover</h5>
+                              <p class="card-text">Smile makeover is that process where cosmetic dental procedures like porcelain veneers, all ceramic crowns, teeth recontouring, gum contouring, tooth whitening, gum depigmentation are done for PERFECT HOLLYWOOD SMILE.</p>
+                              <a href="#" style="color:rgb(254,39,18); font-size:18px;">Read More >></a>
+                            </div>
+                          </div>
+                   
+                        <div class="card" style="width: 18rem;" data-aos="zoom-in">
+                                <div class="card-body">
+                                        <h5 class="card-title">Teeth Whitening</h5>
+                                </div>
+                            <img src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
+                            <div class="card-body d-lg-none">
+                                    <h5 class="card-title">Teeth Whitening</h5>
+                              <p class="card-text">Dr Brijesh Patel (MDS UNI FIRST)’s Brij Dental Clinic Ahmedabad, Gujarat, India, provides Advance Cosmetic And Esthetic Dental Treatment,</p>
+                              <a href="#" style="color:rgb(254,39,18); font-size:18px;">Read More >></a>
+                                <br><br><br>
+                            </div>
+                        </div>
+                       <div class="card" style="width: 18rem;" data-aos="zoom-in">
+                            <div class="card-body">
+                                    <h5 class="card-title">Step by Step replacing several teeth</h5>
+                                </div>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ71NQaYvKVrCjPxUCSlhDOf26sOLM1vuKoHFmQiV8BamUXVGwRpA" class="card-img-top" alt="...">
+                                <div class="card-body d-lg-none">
+                                        <h5 class="card-title">Step by Step replacing several teeth</h5>
+                                  <p class="card-text">Dental Implant supports restorations like single crown, multi-unit bridge and full arch dentures which can serve as permanent teeth replacement solution.</p>
+                                  <a href="#" style="color:rgb(254,39,18); font-size:18px;">Read More >></a>
+                                </div>
+                            </div>
+                               <div class="card" style="width: 18rem;" data-aos="zoom-in">
+                                    <div class="card-body">
+                                            <h5 class="card-title">Q & A for Dental Implants</h5>
+                                    </div>
+                                    <img src="https://soldentalaz.com/wp-content/uploads/2018/03/AdobeStock_155798688-1024x683.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body d-lg-none">
+                                      <h5 class="card-title">Q & A for Dental Implants</h5>
+                                      <p class="card-text">All Questions Related To Dental Implant Treatment and Dental Implant Surgeon are Answered Here. We have all solutions regarding your Dental Implant Treatment Queries. ,</p>
+                                      <a href="#" style="color:rgb(254,39,18); font-size:18px;">Read More >></a>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>  
+    </div>
+
+    <div id="testimonials mb-0">
+        <div class="jumbotron mb-0">
+                <div class="row no-gutters ">
+                        <div class="col-12 text-center mb-5" data-aos="zoom-out">
+                            <h1 id="wel">
+                                    <br><b style="-webkit-text-fill-color:transparent; padding-left:2px; font-weight:normal; -webkit-text-stroke-width: calc(100vh/160);  -webkit-text-stroke-color: #242627; letter-spacing: 4px">What Others Think</b>
+                            </h1>
+                        </div>
+                        <div class="col-12 text-center my-5" style="font-size:25px; color:rgb(98, 92, 92)">
+                            Works is More enjoyable when it is soothing for Someone!
+                        </div>
+                        <div class="col-12">
+                                <div class="cont">
+                                    <div class="container">
+                                            <input type="radio" name="nav" id="first" checked/>
+                                            <input type="radio" name="nav" id="second" />
+                                            <input type="radio" name="nav" id="third" />
+                                            <input type="radio" name="nav" id="four" />
+                                            
+                                            <label for="first" class="first"></label>
+                                          <label for="second"  class="second"></label>
+                                          <label for="third" class="third"></label>
+                                          <label for="four" class="four"></label>
+                                            <div class="one slide">
+                                              <blockquote>
+                                                <span class="leftq quotes">&ldquo;</span> What a nice new facility! Coming into the office, it is clean, bright, and nicely appointed. The staff is professional and greeted me right away. I liked being able to download the new patient paperwork to have completed before coming to their office. The wait was under 5 minutes. Dr. Brijesh S Patel MDS Uni First is professional, friendly, and attentive. The equipment is clean, new, and up to date. The computer screen is right in front of you, so you can see what they see. They also explain it to you – very informative.” Check Original Five Star*****Rated Review At Clinic’s  <span class="rightq quotes">&bdquo; </span>
+                                              </blockquote>
+                                              <img src="images/img17.jpg">
+                                              <h2>Ankit Shastry</h2>
+                                              <h6>Teeth Transplant Patient</h6>
+                                            </div>
+                                            
+                                            <div class="two slide">
+                                              <blockquote>
+                                                <span class="leftq quotes">&ldquo;</span> I recommend this dental place to everyone in need of any dental procedure Dr Brijesh delivers a level of care and expertise that seldom coexists. he is a perfectionist who makes you feel more like a relative seating in his chair than simply another patient. That why I trusted him to do extensive work in my mouth that resulted in a winning smile. He talks to you and explains exactly what you need and what happens if you do not do anything about it. Going to a dentist may be frustrating but he make you comfortable. he has great support staff and reasonable prices. I highly recommend to everyone. Keep up good work..!!<a href="#"> read more</a><span class="rightq quotes">&bdquo; </span>
+                                              </blockquote>
+                                              <img src="http://behance.vo.llnwd.net/profiles14/297668/projects/3041537/f4d6311b432c4804f1c8045459df9647.jpg" width="170" height="130" />
+                                              <h2>Manoj Kumar</h2>
+                                              <h6>Teeth Whitening Patient</h6>
+                                            </div>
+                                            
+                                            <div class="three slide">
+                                              <blockquote>
+                                                <span class="quotes leftq"> &ldquo;</span> Dr. Brijesh is expertise in dental, I had done my 3M lava crown treatment from him and it was awesome. His work is too clean perfect and never painful. I live in USA but still I came from far along only to get his treatment. Wish to always stay in touch with the doctor whenever it comes to dental problem. Original ∗∗∗ <span class="rightq quotes">&bdquo; </span>
+                                              </blockquote>
+                                              <img src="http://media.digitalcameraworld.com/files/2012/10/People_photography_composition_tips_PHG18.chap4_.n_p38_39.jpg" width="170" height="130" />
+                                              <h2>Robin Singh</h2>
+                                              <h6>Cosmetic Dentistry Patient</h6>
+                                            </div>
+                                            <div class="four slide">
+                                                    <blockquote>
+                                                      <span class="quotes leftq"> &ldquo;</span> Dr. Brijesh patel and staff are friendly and caring professionals. He is extremely competent, meticulous, and skilled in dentistry and patient care. Over the years, I have had fillings, crowns and cleanings. All done without problems or stress. This includes work done for my mother and cousin’s wife. He also makes use of the latest technology to enhance his services. I would recommend Dr. Brijesh patel based on successful treatment, advanced clean and comfortable facilities,smart and well -trained staff, and a philosophy that pays attention to detail from the top all the way down.” Check Original Review At Clinic’s Google plus page. <span class="rightq quotes">&bdquo; </span>
+                                                    </blockquote>
+                                                    <img src="http://media.digitalcameraworld.com/files/2012/10/People_photography_composition_tips_PHG18.chap4_.n_p38_39.jpg" width="170" height="130" />
+                                                    <h2>Steve Waugh</h2>
+                                                    <h6>Multi Teeth Transplant Patient</h6>
+                                            </div>
+                                    </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+    </div>
+
+    <div id="gallery" class="my-0 pb-5">
+        <div class="container-fluid">
+            <div class="row no-gutters ">
+                <div class="col-12 text-center mb-5" data-aos="zoom-out">
+                    <h1 id="wel">
+                        <br><b style="-webkit-text-fill-color:#d2b48c; padding-left:2px; font-weight:normal; -webkit-text-stroke-width: calc(100vh/160);  -webkit-text-stroke-color: #242627; letter-spacing: 4px">Gallery</b>
+                    </h1>
+                </div>
+                <div class="col-12 text-center my-5" style="font-size:25px; color:rgb(98, 92, 92)">
+                    Every Moment has something Special in it!
+                </div>
+                <div class="col-12">
+                    <div class="row no-gutters">
+                        <div class="col-12 col-md-3 col-lg-2 p-3">
+                            <div class="filter">
+                                <div class="row no-gutters ">
+                                        <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12"><button data-name='*' class="btn">Gallery</button></div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12"><button data-name='.whitening' class="btn">Teeth Whitening</button></div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12"><button data-name=".makeover" class="btn ">Smile Makeover</button></div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12"><button data-name=".crown" class="btn">Crown & Bridge</button></div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12"><button data-name=".implant" class="btn">Dental Implant</button></div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12"><button data-name=".vaneers" class="btn">Vaneers</button></div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12"><button data-name=".cosmetic" class="btn">Cosmetic Bonding</button></div>
+                                </div>
+                            </div>
+                        </div>
+                                  
+                        <div class="col-12 col-md-9 col-lg-10 pl-5">
+                            <div class="grid">
+                                <img class="grid-item m-0 whitening" src="images/img12.jpg">
+                                <img class="grid-item m-0 crown" src="images/img13.jpg">
+                                <img class="grid-item m-0 implant" src="images/img14.jpg">
+                                <img class="grid-item m-0 vaneers" src="images/img15.jpg">
+                                <img class="grid-item m-0 cosmetic" src="images/img16.jpg">
+                                <img class="grid-item m-0 whitening" src="images/img17.jpg">
+                                <img class="grid-item m-0 makeover" src="images/img18.jpg">
+                                <img class="grid-item m-0 cosmetic" src="images/img19.png">
+                                <img class="grid-item m-0 makeover" src="images/img2.jpg">
+                                <img class="grid-item m-0 implant" src="images/img20.jpg">
+                                <img class="grid-item m-0 vaneers" src="images/img21.jpg">
+                                <img class="grid-item m-0 cosmetic" src="images/img22.jpg">
+                                <img class="grid-item m-0 vaneers" src="images/img3.jpg">
+                                <img class="grid-item m-0 whitening" src="images/img3.png">
+                                <img class="grid-item m-0 makeover" src="images/img4.jpg">
+                                <img class="grid-item m-0 crown" src="images/img5.png">
+                                <img class="grid-item m-0 cosmetic" src="images/img10.jpg">
+                            </div>
+                        </div>
+                        <div class="col-lg-0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row no-gutters">
+                        <div class="col-12 text-center" data-aos="zoom-out">
+                            <h1 id="wel">
+                                <br><b style="-webkit-text-fill-color:#d2b48c; padding-left:2px; font-weight:normal; -webkit-text-stroke-width: calc(100vh/160);  -webkit-text-stroke-color: #242627; letter-spacing: 4px">Contact Info</b>
+                            </h1>
+                        </div>
+                        <div class="col-12 col-md-6 mt-5 p-5">
+                            <h4 style="font-size:calc(100vw/50) "><i class="fas fa-map-marker-alt"></i> f-10 first floor, Akash III complex Above hyundai, Beside Jaymangal BRTS 132″ feet ring road, Naranpura Ahmedabad-380013 Gujarat India
+                                <br><br><i class="fas fa-phone-square" style="transform:rotateY(180deg);"></i> +91 79 27419909
+                                <br><i class="fas fa-phone-square" style="transform:rotateY(180deg);"></i> +91 9898212228
+                                <br><br><i class="fas fa-envelope"></i> &nbsp dr.patelbrijesh@gmail.com
+                                <br><br><i class="fas fa-clock"></i> Monday to Saturday:
+                                <br>&nbsp&nbsp&nbsp Morning: 09:30 am – 01:30pm
+                                <br>&nbsp&nbsp&nbsp Evening: 04:30 pm – 08:30pm
+                                <br>&nbsp&nbsp&nbsp Sunday By Appointment</h4>
+                        </div>
+                        <div class="col-12 col-md-6 pt-5 ifr px-auto m-auto">
+                                <div>
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7342.2002797737105!2d72.549185!3d23.056790000000003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x741708519bb3e51!2sBrij+Dental+Clinic+%26+Implant+Center!5e0!3m2!1sen!2sin!4v1532782835860" width="100%" height="550" frameborder="0" style="border: 0px; pointer-events: none;" allowfullscreen=""></iframe></div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row bg-dark">
+                        <div class="col-12 col-md-8">
+                            <div class="row no-gutters">
+                                <div class="col-12 ">
+                                    <div class="row no-gutters">
+                                        <div class="col-12 text-left pl-5">
+                                            <h1 >
+                                                <br><b  style="letter-spacing: 4px; color:white; ">Blog</b>
+                                            </h3>
+                                            <br><br>
+                                        </div>
+                                        <div class="col-12 col-md-6 pl-5 pr-0" style=" color:white;">
+                                                PAINLESS ROOT CANAL TREATMENT (RCT OR ROOT CANAL SURGERY) AHMEDABAD, INDIA<br><a href="#" style="color:rgb(254,39,18); font-size:18px;">Details >></a>
+                                        </div>
+                                        <br><br>
+                                        <br><br>
+                                        <br><br>
+                                        <div class="col-12 col-md-6 px-5" style=" color:white;">
+                                                Where is the best Dental clinic in Ahmedabad?<br><a href="#" style="color:rgb(254,39,18); font-size:18px;">Details >></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                                <div class="row no-gutters">
+                                    <div class="col-12 ">
+                                        <div class="row no-gutters">
+                                            <div class="col-12 text-left pl-5">
+                                                <h1 >
+                                                    <br><b style="letter-spacing: 4px; color:white;">Dental Implant Courses</b>
+                                                </h3>
+                                                <br><br>
+                                            </div>
+                                            <div class="col-12 pl-5 mb-5" style=" color:white;">
+                                                    (II module and 4 Days ) with Two Speakers from Delhi Dr Praful Mehra&nbsp; with Dr Brijesh Patel<br>
+                                                    Module I<br>
+                                                    Module II<br>
+                                                    Contact 9898212228/ 9429428940<br>
+                                                    For Limited Participants.<br>
+                                                    Book your place today!<a href="#" style="color:rgb(254,39,18); font-size:18px;"><br>Details >></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center mb-5 icn" style="color:white; text-align:center; font-size:25px;">
+                                Follow us at: &nbsp&nbsp 
+                                <a href="#" target="blank">
+                                    <i class="fab fa-facebook-square"></i>
+                                </a>&nbsp&nbsp
+                                <a href="#" target="blank">
+                                    <i class="fab fa-twitter-square"></i>
+                                </a>&nbsp&nbsp
+                                <a href="#" target="blank">
+                                    <i class="fas fa-envelope"></i>
+                                </a>&nbsp&nbsp
+                                <a href="#" target="blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                </a>&nbsp&nbsp
+                                <a href="#" target="blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-12 text-center p-5" style="background: #242627; color:white; ">
+                        BRIJ DENTAL CLINIC &amp; IMPLANT CENTER - All rights reserved 2019, Developed by <a href="https://hyperloo.github.io/website/" target="blank" style="color:aqua; font-size:25px;">tekhin</a>
+                        <br>Powered by <a href="http://phoenixwebsolutions.net/" target="blank">Phoenix Web Solutions</a>
+                </div>
+    </div>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="js/aos.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+            $('.nav-k').click( function(e) {
+                var li = $(this).attr('href');
+                e.preventDefault();
+                    
+                $('html,body').animate( {
+                    scrollTop:$(li).offset().top
+                    },1250);
+                });
+                
+	    	AOS.init({
+			duration: 2500,
+		    });
+
+        });
+        
+
+        var $grid = $('.grid').isotope({
+        itemSelector: '.grid-item',
+        layoutMode: 'fitRows',
+        getSortData: {
+          name: function (element) {
+            return $(element).text();
+          }
+        }
+      });
+      $('.filter button').on("click", function () {
+        var value = $(this).attr('data-name');
+          $grid.isotope({
+            filter: value
+          });
+        $('.filter button').removeClass('active');
+        $(this).addClass('active');
+      })
+      
+    </script>
+</body>
+
+</html>
